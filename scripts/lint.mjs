@@ -89,6 +89,72 @@ for (const a of blanks) {
 if (/href="#"/.test(html)) fail('dead link found: href="#"');
 if (/<button[^>]*>\s*<\/button>/.test(html)) fail('empty button found');
 
+/* ------------------------------------------------- share preview metadata */
+const SITE = 'https://nifana-alshib.vercel.app/';
+const PREVIEW = `${SITE}images/wedding-invitation-preview.jpg`;
+
+if (!html.includes(`<title>Alshib &amp; Nifana — Wedding Invitation</title>`)) {
+  fail('missing/incorrect <title>');
+}
+const mustMeta = [
+  ['name="description"', 'You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026.'],
+  ['property="og:type"', 'website'],
+  ['property="og:site_name"', 'Alshib &amp; Nifana'],
+  ['property="og:title"', 'Alshib &amp; Nifana — Wedding Invitation'],
+  ['property="og:description"', 'You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026.'],
+  ['property="og:url"', SITE],
+  ['property="og:image"', PREVIEW],
+  ['property="og:image:width"', '1200'],
+  ['property="og:image:height"', '630'],
+  ['property="og:image:alt"', 'Alshib and Nifana wedding invitation, 28 and 29 December 2026'],
+  ['name="twitter:card"', 'summary_large_image'],
+  ['name="twitter:title"', 'Alshib &amp; Nifana — Wedding Invitation'],
+  ['name="twitter:description"', 'You are cordially invited to celebrate the wedding of Alshib &amp; Nifana.'],
+  ['name="twitter:image"', PREVIEW],
+];
+for (const [attr, val] of mustMeta) {
+  const re = new RegExp(`<meta[^>]*${attr.replace(/[:[\]]/g, '\\$&')}[^>]*content="${val.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}"[^>]*>`);
+  if (!re.test(html)) fail(`missing/incorrect metadata: ${attr} = "${val}"`);
+}
+if (!html.includes(`<link rel="canonical" href="${SITE}" />`)) {
+  fail(`missing/incorrect canonical link: ${SITE}`);
+}
+/* each og/twitter property must appear exactly once */
+for (const prop of ['og:image', 'og:title', 'og:description', 'og:url', 'twitter:card', 'twitter:image']) {
+  const n = html.split(`="${prop}"`).length - 1;
+  if (n !== 1) fail(`expected exactly 1 ${prop} tag, found ${n}`);
+}
+/* no stray host URLs left in metadata */
+for (const meta of html.match(/<(?:meta|link)\b[^>]*>/g) || []) {
+  if (/(localhost|netlify|\.vercel\.app\/_)/.test(meta)) fail(`metadata references non-production URL: ${meta.slice(0, 90)}`);
+}
+/* the share image must exist on disk and be a real 1200x630 image */
+const previewPath = join(root, 'public', 'images', 'wedding-invitation-preview.jpg');
+if (!existsSync(previewPath)) fail(`share preview image missing: public/images/wedding-invitation-preview.jpg`);
+else {
+  const buf = readFileSync(previewPath);
+  const isJpeg = buf[0] === 0xff && buf[1] === 0xd8;
+  const isPng = buf[0] === 0x89 && buf[1] === 0x50;
+  if (!isJpeg && !isPng) fail('share preview image is not a valid JPEG/PNG');
+  // JPEG: scan for SOF0/SOF2 frame header to read dimensions
+  if (isJpeg) {
+    let i = 2, dims = null;
+    while (i < buf.length - 9) {
+      if (buf[i] !== 0xff) { i++; continue; }
+      const marker = buf[i + 1];
+      const len = buf.readUInt16BE(i + 2);
+      if (marker >= 0xc0 && marker <= 0xcf && marker !== 0xc4 && marker !== 0xc8 && marker !== 0xcc) {
+        dims = { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7) };
+        break;
+      }
+      i += 2 + len;
+    }
+    if (!dims) fail('could not read preview image dimensions');
+    else if (dims.w !== 1200 || dims.h !== 630) fail(`preview image is ${dims.w}x${dims.h}, expected 1200x630`);
+  }
+  if (buf.length > 300 * 1024) warn(`preview image is ${(buf.length / 1024).toFixed(0)} kB (target < 300 kB)`);
+}
+
 /* ------------------------------------------------------------ svg references */
 const defined = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]));
 const used = [...html.matchAll(/href="#([^"]+)"/g)].map((m) => m[1]);
@@ -136,6 +202,7 @@ if (errors.length) {
 console.log(
   `✓ lint passed — ${requiredIds.length} ids, ${requiredCopy.length} copy checks, ` +
     `${requiredLinks.length} destinations, ${used.length} svg refs, ` +
-    `${cssFiles.length} stylesheets, ${jsFiles.length} modules ` +
+    `${cssFiles.length} stylesheets, ${jsFiles.length} modules, ` +
+    `${mustMeta.length + 1} share-meta tags, 1 preview image ` +
     `(${warnings.length} warning(s))`
 );

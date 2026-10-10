@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Production build: lint + syntax-check the ES modules + emit a static
- * `dist/` folder that can be published straight to Netlify.
+ * `dist/` folder that can be published straight to Vercel (or any static host).
  */
 import { execFileSync } from 'node:child_process';
 import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, statSync, readdirSync } from 'node:fs';
@@ -35,6 +35,12 @@ mkdirSync(join(dist, 'assets'), { recursive: true });
 for (const name of ['couple.webp', 'couple-fallback.png']) {
   const from = join(root, 'assets', name);
   if (existsSync(from)) cpSync(from, join(dist, 'assets', name));
+}
+
+/* public/ is copied verbatim so share-preview and any other static files are
+   served from the site root (e.g. public/images/x.jpg -> /images/x.jpg). */
+if (existsSync(join(root, 'public'))) {
+  cpSync(join(root, 'public'), dist, { recursive: true });
 }
 
 const size = (file) => statSync(file).size;
