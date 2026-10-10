@@ -1,0 +1,301 @@
+/* ==========================================================================
+   Ornamental system: petals, sparkles, drawn strokes, botanical layers
+   Note: content inside <use> shadow trees can only be styled through
+   inherited properties, so stroke drawing is animated on the host element.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Stroke drawing — every ornamental path carries pathLength="1"
+   -------------------------------------------------------------------------- */
+.orn-corner,
+.spray,
+.branch,
+.botanical,
+.lantern {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Hero / countdown frames (direct children, so they can be targeted)
+   -------------------------------------------------------------------------- */
+.frame-line {
+  fill: none;
+  stroke: rgba(227, 205, 154, 0.55);
+  stroke-width: 1;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-stroke 1700ms var(--ease) 260ms forwards;
+}
+
+.frame-line--inner {
+  stroke: rgba(227, 205, 154, 0.28);
+  animation-delay: 620ms;
+  animation-duration: 1500ms;
+}
+
+#countdown .countdown__frame .frame-line { animation-play-state: paused; }
+#countdown .countdown__frame.is-in .frame-line { animation-play-state: running; }
+
+/* --------------------------------------------------------------------------
+   Corner ornaments (hero)
+   -------------------------------------------------------------------------- */
+.hero__corners { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+
+.orn-corner {
+  position: absolute;
+  width: clamp(58px, 7vw, 92px);
+  height: clamp(58px, 7vw, 92px);
+  color: var(--gold-soft);
+  opacity: 0;
+  animation: fade-in 900ms var(--ease) forwards,
+             draw-stroke 1500ms var(--ease) 720ms forwards;
+}
+.orn-corner--tl { top: calc(var(--frame-inset) + 10px); left: calc(var(--frame-inset) + 10px); animation-delay: 700ms, 760ms; }
+.orn-corner--tr { top: calc(var(--frame-inset) + 10px); right: calc(var(--frame-inset) + 10px); scale: -1 1; animation-delay: 850ms, 910ms; }
+.orn-corner--bl { bottom: calc(var(--frame-inset) + 10px); left: calc(var(--frame-inset) + 10px); scale: 1 -1; animation-delay: 1000ms, 1060ms; }
+.orn-corner--br { bottom: calc(var(--frame-inset) + 10px); right: calc(var(--frame-inset) + 10px); scale: -1 -1; animation-delay: 1150ms, 1210ms; }
+
+/* --------------------------------------------------------------------------
+   Botanical layers
+   -------------------------------------------------------------------------- */
+.spray, .branch {
+  width: 100%;
+  height: auto;
+  color: var(--gold);
+}
+
+.spray, .branch, .botanical {
+  transform-origin: 50% 50%;
+}
+.lantern {
+  transform-origin: 50% 0;
+}
+
+.hero__flora { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+
+.spray--tl {
+  position: absolute; top: 34px; left: 30px;
+  width: clamp(110px, 14vw, 190px);
+  opacity: 0;
+  animation: fade-scale 1200ms var(--ease) 900ms forwards,
+             draw-stroke 1700ms var(--ease) 1000ms forwards,
+             breeze 9s ease-in-out 2.1s infinite alternate;
+}
+.spray--tr {
+  position: absolute; top: 34px; right: 30px;
+  width: clamp(110px, 14vw, 190px);
+  scale: -1 1;
+  opacity: 0;
+  animation: fade-scale 1200ms var(--ease) 1050ms forwards,
+             draw-stroke 1700ms var(--ease) 1150ms forwards,
+             breeze 11s ease-in-out 2.4s infinite alternate;
+}
+.branch--bl {
+  position: absolute; bottom: -18px; left: -14px;
+  width: clamp(140px, 18vw, 250px);
+  opacity: 0;
+  animation: fade-scale 1300ms var(--ease) 1150ms forwards,
+             draw-stroke 1900ms var(--ease) 1300ms forwards,
+             breeze 9.5s ease-in-out 3.1s infinite alternate;
+}
+.branch--br {
+  position: absolute; bottom: -18px; right: -14px;
+  width: clamp(140px, 18vw, 250px);
+  scale: -1 1;
+  opacity: 0;
+  animation: fade-scale 1300ms var(--ease) 1300ms forwards,
+             draw-stroke 1900ms var(--ease) 1450ms forwards,
+             breeze 12s ease-in-out 3.6s infinite alternate;
+}
+
+/* section botanicals + lanterns sketch themselves as they fade in */
+.section__deco .botanical,
+.section__deco .lantern {
+  animation: fade-in 1100ms var(--ease) 200ms forwards,
+             draw-stroke 1800ms var(--ease) 320ms forwards,
+             breeze 12s ease-in-out 1.4s infinite alternate;
+}
+.section__deco .lantern {
+  animation-name: fade-in, draw-stroke, swing;
+  animation-duration: 1100ms, 1700ms, 6.5s;
+  animation-delay: 240ms, 340ms, 1s;
+  animation-iteration-count: 1, 1, infinite;
+  animation-direction: normal, normal, alternate;
+  animation-timing-function: var(--ease), var(--ease), ease-in-out;
+  animation-fill-mode: forwards, forwards, none;
+}
+.section__deco .lantern--r { animation-delay: 340ms, 440ms, 1.6s; }
+
+/* parallax receives its offset through the translate property so that
+   rotate / scale used above keep composing */
+[data-parallax] { translate: 0 var(--py, 0px); }
+
+/* --------------------------------------------------------------------------
+   Hanging lanterns (edges of the countdown frame)
+   -------------------------------------------------------------------------- */
+.lantern--edge { position: absolute; top: 18px; opacity: 0; }
+.lantern--l { left: clamp(10px, 4vw, 46px); }
+.lantern--r { right: clamp(10px, 4vw, 46px); scale: -1 1; }
+
+#countdown .countdown__frame.is-in .lantern--edge {
+  animation: fade-in 900ms var(--ease) 900ms forwards,
+             draw-stroke 1600ms var(--ease) 1000ms forwards,
+             swing 6.5s ease-in-out 2s infinite alternate;
+}
+#countdown .countdown__frame.is-in .lantern--r { animation-delay: 1100ms, 1200ms, 2.4s; }
+
+/* --------------------------------------------------------------------------
+   Floating petals
+   -------------------------------------------------------------------------- */
+.petal-layer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.petal-layer--soft { opacity: 0.9; }
+
+.petal {
+  position: absolute;
+  top: 0;
+  left: var(--x, 50%);
+  width: var(--size, 16px);
+  opacity: 0;
+  will-change: transform;
+}
+.petal-layer.is-on .petal {
+  opacity: var(--op, 0.7);
+  animation: petal-sway var(--sway-dur, 7s) ease-in-out infinite alternate;
+}
+.petal__fall {
+  display: block;
+  width: 100%;
+  animation: petal-fall var(--fall-dur, 20s) linear infinite;
+  animation-delay: var(--fall-delay, 0s);
+}
+.petal__fall svg { width: 100%; height: auto; }
+
+/* --------------------------------------------------------------------------
+   Ambient gold particles
+   -------------------------------------------------------------------------- */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+.spark {
+  position: absolute;
+  left: var(--x, 50%);
+  top: var(--y, 50%);
+  width: var(--s, 4px);
+  height: var(--s, 4px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 240, 205, 0.95) 0%, rgba(227, 205, 154, 0) 70%);
+  opacity: 0;
+}
+.sparkles.is-on .spark {
+  animation: twinkle var(--dur, 6s) ease-in-out infinite,
+             rise var(--rise, 14s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* --------------------------------------------------------------------------
+   Portrait: arch frame, crest, media reveal
+   -------------------------------------------------------------------------- */
+.portrait-stage {
+  position: relative;
+  margin: 52px auto 0;
+  padding-top: clamp(96px, 15vw, 168px);
+  width: min(920px, 96%);
+}
+
+.portrait-arch {
+  position: absolute;
+  inset: 0 -14px -6px;
+  width: auto;
+  height: calc(100% + 6px);
+  overflow: visible;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.arch-path {
+  fill: none;
+  stroke: rgba(200, 163, 90, 0.85);
+  stroke-width: 1.4;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.arch-path--inner {
+  stroke: rgba(200, 163, 90, 0.42);
+  stroke-width: 1;
+}
+.portrait-stage.is-in .arch-path { animation: draw-stroke 2000ms var(--ease) 320ms forwards; }
+.portrait-stage.is-in .arch-path--inner { animation-delay: 700ms; animation-duration: 1800ms; }
+
+.arch-crest {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  translate: -50% 0;
+  width: clamp(34px, 4vw, 46px);
+  color: var(--gold);
+  z-index: 4;
+  opacity: 0;
+}
+.arch-crest svg { width: 100%; height: auto; }
+.portrait-stage.is-in .arch-crest { animation: crest-in 900ms var(--ease-soft) 2100ms forwards; }
+
+.portrait-media {
+  position: relative;
+  z-index: 2;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1200ms var(--ease-soft) 260ms;
+  filter: drop-shadow(0 22px 40px rgba(63, 10, 23, 0.16));
+}
+.portrait-stage.is-in .portrait-media { clip-path: inset(0 0 0 0); }
+
+.portrait-media img,
+.portrait-media picture { width: 100%; height: auto; }
+
+.couple-reference {
+  display: block;
+  width: 100%;
+  height: auto;
+  mix-blend-mode: multiply;
+  transform: scale(1.05);
+  transition: transform 1600ms var(--ease-soft) 260ms;
+}
+.portrait-stage.is-in .couple-reference { transform: scale(1); }
+
+.portrait-corner {
+  position: absolute;
+  width: 34px; height: 34px;
+  border: 1px solid rgba(200, 163, 90, 0.9);
+  z-index: 4;
+  opacity: 0;
+}
+.portrait-stage.is-in .portrait-corner { animation: fade-in 700ms var(--ease) 1500ms forwards; }
+.portrait-corner--tl { top: clamp(96px, 15vw, 168px); left: -8px; border-right: 0; border-bottom: 0; }
+.portrait-corner--tr { top: clamp(96px, 15vw, 168px); right: -8px; border-left: 0; border-bottom: 0; }
+.portrait-corner--bl { bottom: 12px; left: -8px; border-right: 0; border-top: 0; }
+.portrait-corner--br { bottom: 12px; right: -8px; border-left: 0; border-top: 0; }
+
+/* --------------------------------------------------------------------------
+   Event icon line drawing
+   -------------------------------------------------------------------------- */
+.event-icon { width: 38px; height: 38px; margin: 0 auto 18px; }
+.event-icon__path {
+  fill: none;
+  stroke: var(--maroon);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.event-card.is-in .event-icon__path { animation: draw-stroke 1600ms var(--ease) 520ms forwards; }

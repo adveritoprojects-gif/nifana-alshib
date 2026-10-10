@@ -1,0 +1,286 @@
+/* ==========================================================================
+   Motion system: keyframes, scroll reveals, hero timeline
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Keyframes
+   -------------------------------------------------------------------------- */
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-scale {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translate3d(0, 22px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes letter-space {
+  from { opacity: 0; letter-spacing: 0.62em; }
+  to { opacity: 1; letter-spacing: 0.35em; }
+}
+
+@keyframes mask-up {
+  from { transform: translate3d(0, 112%, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes glow-in {
+  from { opacity: 0; transform: scale(0.82); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes breeze {
+  from { rotate: -0.7deg; }
+  to { rotate: 1.1deg; }
+}
+
+@keyframes swing {
+  from { rotate: -3.5deg; }
+  to { rotate: 3.5deg; }
+}
+
+@keyframes rings-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rings-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  45% { opacity: 0.95; transform: scale(1); }
+  70% { opacity: 0.2; transform: scale(0.8); }
+}
+
+@keyframes rise {
+  0% { translate: 0 12vh; }
+  100% { translate: 0 -14vh; }
+}
+
+@keyframes petal-sway {
+  from { transform: translate3d(calc(var(--drift, 24px) * -1), 0, 0); }
+  to { transform: translate3d(var(--drift, 24px), 0, 0); }
+}
+
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -22vh, 0) rotate(0deg); }
+  100% { transform: translate3d(0, 122vh, 0) rotate(var(--spin, 540deg)); }
+}
+
+@keyframes scroll-dot {
+  0% { transform: translateY(-6px); opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { transform: translateY(38px); opacity: 0; }
+}
+
+@keyframes tick {
+  0% { transform: translate3d(0, 0, 0); opacity: 1; }
+  38% { transform: translate3d(0, -46%, 0); opacity: 0; }
+  39% { transform: translate3d(0, 46%, 0); opacity: 0; }
+  100% { transform: translate3d(0, 0, 0); opacity: 1; }
+}
+
+@keyframes crest-in {
+  0% { opacity: 0; transform: rotate(-140deg) scale(0.4); }
+  100% { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+
+@keyframes spark-burst {
+  0% { opacity: 0; transform: scale(0.2); }
+  40% { opacity: 1; transform: scale(1.15); }
+  100% { opacity: 0.35; transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal — one consistent entrance language
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+  opacity: 0;
+  transform: translate3d(var(--rx, 0), var(--ry, 26px), 0) scale(var(--rs, 1));
+  transition:
+    opacity var(--t-section) var(--ease) var(--d, 0s),
+    transform var(--t-section) var(--ease-soft) var(--d, 0s);
+  will-change: opacity, transform;
+}
+
+[data-reveal].is-in {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+[data-reveal="left"] { --rx: -46px; --ry: 0; }
+[data-reveal="right"] { --rx: 46px; --ry: 0; }
+[data-reveal="scale"] { --rs: 0.78; --ry: 0; }
+
+[data-reveal="fade"] { transform: none; }
+
+[data-reveal="mask"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 1200ms var(--ease-soft) var(--d, 0s);
+}
+[data-reveal="mask"].is-in { clip-path: inset(0 0 0 0); }
+
+/* dividers and rules draw themselves instead of sliding in */
+[data-reveal="divider"] { opacity: 1; transform: none; }
+
+[data-reveal="rule"] {
+  opacity: 1;
+  transform: scaleX(0);
+  transition: transform 1000ms var(--ease) var(--d, 0s);
+}
+[data-reveal="rule"].is-in { transform: scaleX(1); }
+
+/* stagger for grouped children (used on the names block) */
+[data-stagger] > [data-reveal]:nth-child(1) { --d: 0.06s; }
+[data-stagger] > [data-reveal]:nth-child(2) { --d: 0.22s; }
+[data-stagger] > [data-reveal]:nth-child(3) { --d: 0.38s; }
+
+/* clear the will-change once the entrance has finished */
+[data-reveal].is-in { will-change: auto; }
+
+/* --------------------------------------------------------------------------
+   Hero cinematic timeline
+   -------------------------------------------------------------------------- */
+.hero__glow {
+  opacity: 0;
+  animation: glow-in 1600ms var(--ease) 120ms forwards;
+}
+
+.bg-motif { opacity: 0; animation: fade-in 1800ms var(--ease) 420ms forwards; }
+
+.hero__rings {
+  opacity: 0;
+  animation: fade-in 2000ms var(--ease) 700ms forwards;
+}
+.rings-spin { transform-origin: 50% 50%; animation: rings-spin 150s linear infinite; }
+
+.hero-eyebrow {
+  opacity: 0;
+  animation: letter-space 1100ms var(--ease) 900ms forwards;
+}
+
+.name-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+.name-line {
+  display: block;
+  transform: translate3d(0, 112%, 0);
+  animation: mask-up 1150ms var(--ease-soft) forwards;
+}
+.name-line { animation-delay: 1150ms; }
+.name-line--two { animation-delay: 1620ms; }
+
+.hero-names .amp {
+  opacity: 0;
+  transform: scale(0.4) rotate(-40deg);
+  animation: crest-in 900ms var(--ease-soft) 1450ms forwards;
+}
+
+.hero-date {
+  opacity: 0;
+  animation: rise-in 1000ms var(--ease) 2050ms forwards;
+}
+
+.scroll-cue {
+  opacity: 0;
+  animation: fade-in 900ms var(--ease) 2400ms forwards;
+}
+
+/* --------------------------------------------------------------------------
+   Micro-interactions
+   -------------------------------------------------------------------------- */
+.dir-link {
+  position: relative;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: 0% 1px;
+  border-bottom-color: transparent;
+  transition: color var(--t-ui) var(--ease), background-size 420ms var(--ease);
+}
+.dir-link:hover,
+.dir-link:focus-visible { background-size: 100% 1px; }
+
+.dir-btn {
+  transition:
+    background-color var(--t-ui) var(--ease),
+    color var(--t-ui) var(--ease),
+    box-shadow 320ms var(--ease),
+    transform 180ms var(--ease);
+}
+.dir-btn:hover,
+.dir-btn:focus-visible {
+  background-color: var(--gold-soft);
+  color: var(--maroon-deep);
+  box-shadow: 0 10px 24px rgba(63, 10, 23, 0.28);
+}
+.dir-btn:active { transform: translateY(1px) scale(0.985); }
+
+.event-card,
+.map-card {
+  transition:
+    transform 420ms var(--ease-soft),
+    box-shadow 420ms var(--ease),
+    border-color 420ms var(--ease);
+}
+.event-card:hover,
+.map-card:hover {
+  transform: translate3d(0, -6px, 0);
+  box-shadow: 0 22px 44px rgba(63, 10, 23, 0.14);
+  border-color: rgba(200, 163, 90, 0.75);
+}
+.event-card:hover .event-card__corner { width: 34px; height: 34px; }
+
+.event-card__corner {
+  position: absolute;
+  width: 22px; height: 22px;
+  border: 1px solid var(--gold);
+  transition: width 420ms var(--ease), height 420ms var(--ease);
+}
+.event-card__corner--tl { top: 10px; left: 10px; border-right: 0; border-bottom: 0; }
+.event-card__corner--br { bottom: 10px; right: 10px; border-left: 0; border-top: 0; }
+
+.map-card:hover .map-card__frame { border-color: rgba(200, 163, 90, 0.8); }
+.map-card__frame { transition: border-color 420ms var(--ease); }
+
+.scroll-cue {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+.scroll-cue:hover .scroll-cue__track { background: rgba(227, 205, 154, 0.55); }
+
+.countdown .num { display: block; }
+.countdown .num.is-tick { animation: tick 620ms var(--ease); }
+
+.footer__sparkle {
+  position: absolute;
+  inset: -18% -8%;
+  pointer-events: none;
+  background:
+    radial-gradient(2px 2px at 12% 30%, rgba(255, 240, 205, 0.95), transparent 60%),
+    radial-gradient(2px 2px at 86% 24%, rgba(255, 240, 205, 0.9), transparent 60%),
+    radial-gradient(2px 2px at 72% 78%, rgba(227, 205, 154, 0.9), transparent 60%),
+    radial-gradient(2px 2px at 26% 82%, rgba(227, 205, 154, 0.85), transparent 60%);
+  opacity: 0;
+}
+.is-in .footer__sparkle { animation: spark-burst 2600ms var(--ease) 700ms forwards, twinkle 5.5s ease-in-out 3.2s infinite; }
