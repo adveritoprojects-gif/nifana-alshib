@@ -1,638 +1,1278 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<!-- Static wedding invitation. Deployed on Vercel (https://nifana-alshib.vercel.app/).
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Static wedding invitation. Deployed on Vercel (https://nifana-alshib.vercel.app/).
      Build: npm run build -> dist/ (scripts/build.mjs). -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#3f0a17" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233f0a17'/%3E%3Cpath d='M16 5.5l2.6 7.9 7.9 2.6-7.9 2.6L16 26.5l-2.6-7.9-7.9-2.6 7.9-2.6z' fill='%23c8a35a'/%3E%3C/svg%3E" />
-<title>Alshib &amp; Nifana — Wedding Invitation</title>
-<meta name="description" content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026." />
-<link rel="canonical" href="https://nifana-alshib.vercel.app/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Alshib &amp; Nifana" />
-<meta property="og:title" content="Alshib &amp; Nifana — Wedding Invitation" />
-<meta property="og:description" content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026." />
-<meta property="og:url" content="https://nifana-alshib.vercel.app/" />
-<meta property="og:image" content="https://nifana-alshib.vercel.app/images/wedding-invitation-preview.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Alshib and Nifana wedding invitation, 28 and 29 December 2026" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Alshib &amp; Nifana — Wedding Invitation" />
-<meta name="twitter:description" content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana." />
-<meta name="twitter:image" content="https://nifana-alshib.vercel.app/images/wedding-invitation-preview.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./css/base.css">
-<link rel="stylesheet" href="./css/ornaments.css">
-<link rel="stylesheet" href="./css/sections.css">
-<link rel="stylesheet" href="./css/animations.css">
-<link rel="stylesheet" href="./css/responsive.css">
-<noscript><style>
-  [data-reveal]{opacity:1 !important;transform:none !important;clip-path:none !important;}
-  .divider__line,.rule{transform:scaleX(1) !important;}
-  .divider__mark{opacity:1 !important;transform:none !important;}
-  .lede__line{opacity:1 !important;transform:none !important;}
-  .portrait-media{clip-path:none !important;}
-  .arch-path,.frame-line,.event-icon__path,.orn-corner,.spray,.branch,.botanical,.lantern{stroke-dashoffset:0 !important;}
-  .orn-corner,.spray--tl,.spray--tr,.branch--bl,.branch--br,.arch-crest,.portrait-corner,.countdown__corner{opacity:1 !important;}
-  .name-line{transform:none !important;}
-  .hero-eyebrow,.hero-date,.scroll-cue,.bg-motif,.hero__rings,.hero__glow{opacity:1 !important;}
-  .hero-names .amp{opacity:1 !important;transform:none !important;}
-  .petal-layer,.sparkles{display:none !important;}
-</style></noscript>
-<script type="module" src="./js/main.js"></script>
-</head>
-<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3f0a17" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%233f0a17'/%3E%3Cpath d='M16 5.5l2.6 7.9 7.9 2.6-7.9 2.6L16 26.5l-2.6-7.9-7.9-2.6 7.9-2.6z' fill='%23c8a35a'/%3E%3C/svg%3E"
+    />
+    <title>Alshib &amp; Nifana — Wedding Invitation</title>
+    <meta
+      name="description"
+      content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026."
+    />
+    <link rel="canonical" href="https://nifana-alshib.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alshib &amp; Nifana" />
+    <meta
+      property="og:title"
+      content="Alshib &amp; Nifana — Wedding Invitation"
+    />
+    <meta
+      property="og:description"
+      content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana on 28 &amp; 29 December 2026."
+    />
+    <meta property="og:url" content="https://nifana-alshib.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://nifana-alshib.vercel.app/images/wedding-invitation-preview.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Alshib and Nifana wedding invitation, 28 and 29 December 2026"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alshib &amp; Nifana — Wedding Invitation"
+    />
+    <meta
+      name="twitter:description"
+      content="You are cordially invited to celebrate the wedding of Alshib &amp; Nifana."
+    />
+    <meta
+      name="twitter:image"
+      content="https://nifana-alshib.vercel.app/images/wedding-invitation-preview.jpg"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/ornaments.css" />
+    <link rel="stylesheet" href="./css/sections.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+    <noscript
+      ><style>
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+          clip-path: none !important;
+        }
+        .divider__line,
+        .rule {
+          transform: scaleX(1) !important;
+        }
+        .divider__mark {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .lede__line {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .portrait-media {
+          clip-path: none !important;
+        }
+        .arch-path,
+        .frame-line,
+        .event-icon__path,
+        .orn-corner,
+        .spray,
+        .branch,
+        .botanical,
+        .lantern {
+          stroke-dashoffset: 0 !important;
+        }
+        .orn-corner,
+        .spray--tl,
+        .spray--tr,
+        .branch--bl,
+        .branch--br,
+        .arch-crest,
+        .portrait-corner,
+        .countdown__corner {
+          opacity: 1 !important;
+        }
+        .name-line {
+          transform: none !important;
+        }
+        .hero-eyebrow,
+        .hero-date,
+        .scroll-cue,
+        .bg-motif,
+        .hero__rings,
+        .hero__glow {
+          opacity: 1 !important;
+        }
+        .hero-names .amp {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .petal-layer,
+        .sparkles {
+          display: none !important;
+        }
+      </style></noscript
+    >
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#portrait">Skip to the invitation</a>
 
-<a class="skip-link" href="#portrait">Skip to the invitation</a>
-
-<!-- ============================================================
+    <!-- ============================================================
      HERO — cinematic opening
      ============================================================ -->
-<section id="hero" class="hero" aria-labelledby="hero-title">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__glow"></div>
+        <div class="bg-motif"></div>
 
-  <div class="hero__bg" aria-hidden="true">
-    <div class="hero__glow"></div>
-    <div class="bg-motif"></div>
-
-    <svg class="hero__rings" viewBox="0 0 600 600" data-parallax="0.05" aria-hidden="true">
-      <g class="rings-spin" fill="none" stroke="currentColor">
-        <circle cx="300" cy="300" r="252" stroke-width="1" stroke-dasharray="3 9" />
-        <circle cx="300" cy="300" r="196" stroke-width="1" />
-        <circle cx="300" cy="300" r="150" stroke-width="1" stroke-dasharray="1 6" />
-        <path d="M300 66 L361 173 L486 186 L421 289 L486 392 L361 405 L300 512 L239 405 L114 392 L179 289 L114 186 L239 173 Z" stroke-width="1" />
-        <path d="M300 122 L347 206 L444 216 L394 292 L444 368 L347 378 L300 462 L253 378 L156 368 L206 292 L156 216 L253 206 Z" stroke-width="1" opacity="0.7" />
-        <circle cx="300" cy="300" r="92" stroke-width="1" stroke-dasharray="2 10" />
-      </g>
-    </svg>
-
-    <div class="sparkles" data-sparks="9"></div>
-    <div class="petal-layer" data-petals="11" data-petal-tone="warm"></div>
-  </div>
-
-  <svg class="hero__frame" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true">
-    <rect class="frame-line" x="18" y="18" width="1404" height="864" pathLength="1" vector-effect="non-scaling-stroke" />
-    <rect class="frame-line frame-line--inner" x="27" y="27" width="1386" height="846" pathLength="1" vector-effect="non-scaling-stroke" />
-  </svg>
-
-  <div class="hero__corners" aria-hidden="true">
-    <svg class="orn-corner orn-corner--tl" viewBox="0 0 120 120"><use href="#s-corner" /></svg>
-    <svg class="orn-corner orn-corner--tr" viewBox="0 0 120 120"><use href="#s-corner" /></svg>
-    <svg class="orn-corner orn-corner--bl" viewBox="0 0 120 120"><use href="#s-corner" /></svg>
-    <svg class="orn-corner orn-corner--br" viewBox="0 0 120 120"><use href="#s-corner" /></svg>
-  </div>
-
-  <div class="hero__flora" aria-hidden="true">
-    <svg class="spray spray--tl" viewBox="0 0 160 160" data-parallax="0.04"><use href="#s-spray" /></svg>
-    <svg class="spray spray--tr" viewBox="0 0 160 160" data-parallax="0.04"><use href="#s-spray" /></svg>
-    <svg class="branch branch--bl" viewBox="0 0 180 200" data-parallax="0.07"><use href="#s-branch" /></svg>
-    <svg class="branch branch--br" viewBox="0 0 180 200" data-parallax="0.07"><use href="#s-branch" /></svg>
-  </div>
-
-  <div class="hero__content">
-    <p class="hero-eyebrow">The Wedding Of</p>
-    <h1 class="hero-names" id="hero-title">
-      <span class="name-mask"><span class="name-line">ALSHIB</span></span>
-      <span class="amp">&amp;</span>
-      <span class="name-mask"><span class="name-line name-line--two">NIFANA</span></span>
-    </h1>
-    <p class="hero-date">28 &amp; 29 December 2026</p>
-  </div>
-
-  <button class="scroll-cue" type="button" aria-label="Scroll down to the invitation">
-    <span class="scroll-cue__label">Scroll</span>
-    <span class="scroll-cue__track" aria-hidden="true"><span class="scroll-cue__dot"></span></span>
-  </button>
-</section>
-
-<main id="main">
-
-  <!-- ============================================================
-       PORTRAIT — bismillah & couple illustration
-       ============================================================ -->
-  <section id="portrait" class="section portrait" aria-labelledby="portrait-title">
-    <div class="arch-band arch-band--down" aria-hidden="true">
-      <svg viewBox="0 0 1200 74" preserveAspectRatio="none"><rect width="1200" height="74" fill="url(#p-pendant-soft)" /></svg>
-    </div>
-
-    <div class="section__deco section__deco--left" aria-hidden="true">
-      <svg class="botanical" viewBox="0 0 180 200" data-parallax="0.06"><use href="#s-branch" /></svg>
-    </div>
-    <div class="section__deco section__deco--right" aria-hidden="true">
-      <svg class="botanical" viewBox="0 0 180 200" data-parallax="0.06"><use href="#s-branch" /></svg>
-    </div>
-
-    <div class="section__inner">
-      <p class="eyebrow" data-reveal="up">Bismillah</p>
-      <h2 class="section-title" id="portrait-title" data-reveal="up" style="--d:.1s">Alshib &amp; Nifana</h2>
-      <div class="divider" data-reveal="divider" style="--d:.2s"><span class="divider__line"></span><svg class="divider__mark" viewBox="0 0 24 24"><use href="#s-star8" /></svg><span class="divider__line"></span></div>
-
-      <div class="portrait-stage" data-reveal="fade" style="--d:.18s">
-        <svg class="portrait-arch" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
-          <path class="arch-path arch-path--outer" pathLength="1" vector-effect="non-scaling-stroke"
-                d="M16 1000 V300 Q16 90 500 24 Q984 90 984 300 V1000" />
-          <path class="arch-path arch-path--inner" pathLength="1" vector-effect="non-scaling-stroke"
-                d="M44 1000 V318 Q44 132 500 66 Q956 132 956 318 V1000" />
+        <svg
+          class="hero__rings"
+          viewBox="0 0 600 600"
+          data-parallax="0.05"
+          aria-hidden="true"
+        >
+          <g class="rings-spin" fill="none" stroke="currentColor">
+            <circle
+              cx="300"
+              cy="300"
+              r="252"
+              stroke-width="1"
+              stroke-dasharray="3 9"
+            />
+            <circle cx="300" cy="300" r="196" stroke-width="1" />
+            <circle
+              cx="300"
+              cy="300"
+              r="150"
+              stroke-width="1"
+              stroke-dasharray="1 6"
+            />
+            <path
+              d="M300 66 L361 173 L486 186 L421 289 L486 392 L361 405 L300 512 L239 405 L114 392 L179 289 L114 186 L239 173 Z"
+              stroke-width="1"
+            />
+            <path
+              d="M300 122 L347 206 L444 216 L394 292 L444 368 L347 378 L300 462 L253 378 L156 368 L206 292 L156 216 L253 206 Z"
+              stroke-width="1"
+              opacity="0.7"
+            />
+            <circle
+              cx="300"
+              cy="300"
+              r="92"
+              stroke-width="1"
+              stroke-dasharray="2 10"
+            />
+          </g>
         </svg>
 
-        <span class="arch-crest" aria-hidden="true"><svg viewBox="0 0 48 48"><use href="#s-star8" /></svg></span>
-
-        <div class="portrait-media">
-          <picture>
-            <source type="image/webp" srcset="./assets/couple.webp" width="1315" height="1196" />
-            <img class="couple-reference" src="./assets/couple-fallback.png"
-                 alt="Wedding couple illustration in maroon and gold"
-                 width="1315" height="1196" decoding="async" loading="lazy" />
-          </picture>
-        </div>
-
-        <span class="portrait-corner portrait-corner--tl" aria-hidden="true"></span>
-        <span class="portrait-corner portrait-corner--tr" aria-hidden="true"></span>
-        <span class="portrait-corner portrait-corner--bl" aria-hidden="true"></span>
-        <span class="portrait-corner portrait-corner--br" aria-hidden="true"></span>
+        <div class="sparkles" data-sparks="9"></div>
+        <div class="petal-layer" data-petals="11" data-petal-tone="warm"></div>
       </div>
 
-      <p class="portrait-note" data-reveal="up" style="--d:.3s">Two families, joined in faith and love</p>
-    </div>
+      <svg
+        class="hero__frame"
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <rect
+          class="frame-line"
+          x="18"
+          y="18"
+          width="1404"
+          height="864"
+          pathLength="1"
+          vector-effect="non-scaling-stroke"
+        />
+        <rect
+          class="frame-line frame-line--inner"
+          x="27"
+          y="27"
+          width="1386"
+          height="846"
+          pathLength="1"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
 
-    <div class="petal-layer petal-layer--soft" data-petals="7" data-petal-tone="light" aria-hidden="true"></div>
-  </section>
+      <div class="hero__corners" aria-hidden="true">
+        <svg class="orn-corner orn-corner--tl" viewBox="0 0 120 120">
+          <use href="#s-corner" />
+        </svg>
+        <svg class="orn-corner orn-corner--tr" viewBox="0 0 120 120">
+          <use href="#s-corner" />
+        </svg>
+        <svg class="orn-corner orn-corner--bl" viewBox="0 0 120 120">
+          <use href="#s-corner" />
+        </svg>
+        <svg class="orn-corner orn-corner--br" viewBox="0 0 120 120">
+          <use href="#s-corner" />
+        </svg>
+      </div>
 
-  <!-- ============================================================
+      <div class="hero__flora" aria-hidden="true">
+        <svg class="spray spray--tl" viewBox="0 0 160 160" data-parallax="0.04">
+          <use href="#s-spray" />
+        </svg>
+        <svg class="spray spray--tr" viewBox="0 0 160 160" data-parallax="0.04">
+          <use href="#s-spray" />
+        </svg>
+        <svg
+          class="branch branch--bl"
+          viewBox="0 0 180 200"
+          data-parallax="0.07"
+        >
+          <use href="#s-branch" />
+        </svg>
+        <svg
+          class="branch branch--br"
+          viewBox="0 0 180 200"
+          data-parallax="0.07"
+        >
+          <use href="#s-branch" />
+        </svg>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero-eyebrow">The Wedding Of</p>
+        <h1 class="hero-names" id="hero-title">
+          <span class="name-mask"><span class="name-line">ALSHIB</span></span>
+          <span class="amp">&amp;</span>
+          <span class="name-mask"
+            ><span class="name-line name-line--two">NIFANA</span></span
+          >
+        </h1>
+        <p class="hero-date">28 &amp; 29 December 2026</p>
+      </div>
+
+      <button
+        class="scroll-cue"
+        type="button"
+        aria-label="Scroll down to the invitation"
+      >
+        <span class="scroll-cue__label">Scroll</span>
+        <span class="scroll-cue__track" aria-hidden="true"
+          ><span class="scroll-cue__dot"></span
+        ></span>
+      </button>
+    </section>
+
+    <main id="main">
+      <!-- ============================================================
+       PORTRAIT — bismillah & couple illustration
+       ============================================================ -->
+      <section
+        id="portrait"
+        class="section portrait"
+        aria-labelledby="portrait-title"
+      >
+        <div class="arch-band arch-band--down" aria-hidden="true">
+          <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+            <rect width="1200" height="74" fill="url(#p-pendant-soft)" />
+          </svg>
+        </div>
+
+        <div class="section__deco section__deco--left" aria-hidden="true">
+          <svg class="botanical" viewBox="0 0 180 200" data-parallax="0.06">
+            <use href="#s-branch" />
+          </svg>
+        </div>
+        <div class="section__deco section__deco--right" aria-hidden="true">
+          <svg class="botanical" viewBox="0 0 180 200" data-parallax="0.06">
+            <use href="#s-branch" />
+          </svg>
+        </div>
+
+        <div class="section__inner">
+          <p class="eyebrow" data-reveal="up">Bismillah</p>
+          <h2
+            class="section-title"
+            id="portrait-title"
+            data-reveal="up"
+            style="--d: 0.1s"
+          >
+            Alshib &amp; Nifana
+          </h2>
+          <div class="divider" data-reveal="divider" style="--d: 0.2s">
+            <span class="divider__line"></span
+            ><svg class="divider__mark" viewBox="0 0 24 24">
+              <use href="#s-star8" /></svg
+            ><span class="divider__line"></span>
+          </div>
+
+          <div class="portrait-stage" data-reveal="fade" style="--d: 0.18s">
+            <svg
+              class="portrait-arch"
+              viewBox="0 0 1000 1000"
+              preserveAspectRatio="none"
+              aria-hidden="true"
+            >
+              <path
+                class="arch-path arch-path--outer"
+                pathLength="1"
+                vector-effect="non-scaling-stroke"
+                d="M16 1000 V300 Q16 90 500 24 Q984 90 984 300 V1000"
+              />
+              <path
+                class="arch-path arch-path--inner"
+                pathLength="1"
+                vector-effect="non-scaling-stroke"
+                d="M44 1000 V318 Q44 132 500 66 Q956 132 956 318 V1000"
+              />
+            </svg>
+
+            <span class="arch-crest" aria-hidden="true"
+              ><svg viewBox="0 0 48 48"><use href="#s-star8" /></svg
+            ></span>
+
+            <div class="portrait-media">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="./assets/couple.webp"
+                  width="1315"
+                  height="1196"
+                />
+                <img
+                  class="couple-reference"
+                  src="./assets/couple-fallback.png"
+                  alt="Wedding couple illustration in maroon and gold"
+                  width="1315"
+                  height="1196"
+                  decoding="async"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+
+            <span
+              class="portrait-corner portrait-corner--tl"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="portrait-corner portrait-corner--tr"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="portrait-corner portrait-corner--bl"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="portrait-corner portrait-corner--br"
+              aria-hidden="true"
+            ></span>
+          </div>
+
+          <p class="portrait-note" data-reveal="up" style="--d: 0.3s">
+            Two families, joined in faith and love
+          </p>
+        </div>
+
+        <div
+          class="petal-layer petal-layer--soft"
+          data-petals="7"
+          data-petal-tone="light"
+          aria-hidden="true"
+        ></div>
+      </section>
+
+      <!-- ============================================================
        COUPLE — invitation message & family details
        ============================================================ -->
-  <section id="couple" class="section couple" aria-labelledby="couple-title">
-    <div class="arch-band arch-band--hairline" aria-hidden="true">
-      <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><rect width="1200" height="60" fill="url(#p-pendant-gold)" /></svg>
-    </div>
-
-    <div class="section__deco section__deco--left" aria-hidden="true">
-      <svg class="botanical botanical--sm" viewBox="0 0 160 160" data-parallax="0.05"><use href="#s-spray" /></svg>
-    </div>
-    <div class="section__deco section__deco--right" aria-hidden="true">
-      <svg class="botanical botanical--sm" viewBox="0 0 160 160" data-parallax="0.05"><use href="#s-spray" /></svg>
-    </div>
-
-    <div class="section__inner">
-      <h2 class="sr-only" id="couple-title">Invitation</h2>
-
-      <div class="invite" data-reveal="up">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="lede">
-          <span class="lede__line">Together with our families, we joyfully invite you to</span>
-          <span class="lede__line">witness the union of two souls and celebrate with us</span>
-          <span class="lede__line">on our wedding day.</span>
-        </p>
-      </div>
-
-      <div class="rule" data-reveal="rule" style="--d:.14s"><span></span></div>
-
-      <div class="names-block" data-stagger>
-        <div class="name-card" data-reveal="up">
-          <span class="name-card__flourish" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#s-corner" /></svg></span>
-          <h3>ALSHIB</h3>
-          <p>S/O. Abdul Haris &amp; Jameela</p>
+      <section
+        id="couple"
+        class="section couple"
+        aria-labelledby="couple-title"
+      >
+        <div class="arch-band arch-band--hairline" aria-hidden="true">
+          <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <rect width="1200" height="60" fill="url(#p-pendant-gold)" />
+          </svg>
         </div>
-        <div class="amp-big" data-reveal="scale" aria-hidden="true">&amp;</div>
-        <div class="name-card" data-reveal="up">
-          <span class="name-card__flourish name-card__flourish--r" aria-hidden="true"><svg viewBox="0 0 120 120"><use href="#s-corner" /></svg></span>
-          <h3>NIFANA</h3>
-          <p>D/O. Jafar Shathik &amp; Nasiya</p>
+
+        <div class="section__deco section__deco--left" aria-hidden="true">
+          <svg
+            class="botanical botanical--sm"
+            viewBox="0 0 160 160"
+            data-parallax="0.05"
+          >
+            <use href="#s-spray" />
+          </svg>
         </div>
-      </div>
+        <div class="section__deco section__deco--right" aria-hidden="true">
+          <svg
+            class="botanical botanical--sm"
+            viewBox="0 0 160 160"
+            data-parallax="0.05"
+          >
+            <use href="#s-spray" />
+          </svg>
+        </div>
 
-      <div class="rule" data-reveal="rule" style="--d:.2s"><span></span></div>
-    </div>
+        <div class="section__inner">
+          <h2 class="sr-only" id="couple-title">Invitation</h2>
 
-    <div class="petal-layer petal-layer--soft" data-petals="6" data-petal-tone="light" aria-hidden="true"></div>
-  </section>
+          <div class="invite" data-reveal="up">
+            <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+            <p class="lede">
+              <span class="lede__line"
+                >Together with our families, we joyfully invite you to</span
+              >
+              <span class="lede__line"
+                >witness the union of two souls and celebrate with us</span
+              >
+              <span class="lede__line">on our wedding day.</span>
+            </p>
+          </div>
 
-  <!-- ============================================================
+          <div class="rule" data-reveal="rule" style="--d: 0.14s">
+            <span></span>
+          </div>
+
+          <div class="names-block" data-stagger>
+            <div class="name-card" data-reveal="up">
+              <span class="name-card__flourish" aria-hidden="true"
+                ><svg viewBox="0 0 120 120"><use href="#s-corner" /></svg
+              ></span>
+              <h3>ALSHIB</h3>
+              <p>S/O. Abdul Haris &amp; Jameela</p>
+            </div>
+            <div class="amp-big" data-reveal="scale" aria-hidden="true">
+              &amp;
+            </div>
+            <div class="name-card" data-reveal="up">
+              <span
+                class="name-card__flourish name-card__flourish--r"
+                aria-hidden="true"
+                ><svg viewBox="0 0 120 120"><use href="#s-corner" /></svg
+              ></span>
+              <h3>NIFANA</h3>
+              <p>D/O. Jafar Shathik &amp; Nasiya</p>
+            </div>
+          </div>
+
+          <div class="rule" data-reveal="rule" style="--d: 0.2s">
+            <span></span>
+          </div>
+        </div>
+
+        <div
+          class="petal-layer petal-layer--soft"
+          data-petals="6"
+          data-petal-tone="light"
+          aria-hidden="true"
+        ></div>
+      </section>
+
+      <!-- ============================================================
        EVENTS — celebration schedule
        ============================================================ -->
-  <section id="events" class="section events" aria-labelledby="events-title">
-    <div class="arch-band arch-band--down" aria-hidden="true">
-      <svg viewBox="0 0 1200 74" preserveAspectRatio="none"><rect width="1200" height="74" fill="url(#p-pendant-cream)" /></svg>
-    </div>
-
-    <div class="section__deco section__deco--top" aria-hidden="true">
-      <svg class="lantern" viewBox="0 0 64 150" data-parallax="0.05"><use href="#s-lantern" /></svg>
-      <svg class="lantern lantern--r" viewBox="0 0 64 150" data-parallax="0.05"><use href="#s-lantern" /></svg>
-    </div>
-
-    
-
-
-
-<div class="section__inner">
-  <p class="eyebrow" data-reveal="up">Celebration</p>
-
-  <h2 class="section-title" id="events-title"
-      data-reveal="up" style="--d:.1s">
-    Wedding Events
-  </h2>
-
-  <div class="divider" data-reveal="divider" style="--d:.18s">
-    <span class="divider__line"></span>
-    <svg class="divider__mark" viewBox="0 0 24 24">
-      <use href="#s-star8" />
-    </svg>
-    <span class="divider__line"></span>
-  </div>
-
-  <div class="events-grid">
-
-    <!-- Bride's Venue -->
-    <article class="event-card event-card--bride"
-             data-reveal="left" style="--d:.1s">
-
-      <span class="event-card__corner event-card__corner--tl"
-            aria-hidden="true"></span>
-      <span class="event-card__corner event-card__corner--br"
-            aria-hidden="true"></span>
-
-      <header class="event-card__header">
-        <span class="event-card__label" style="font-size: 40px; " >Bride's Venue</span>
-      </header>
-
-      <div class="event-card__body">
-
-        <h3>Nikkah</h3>
-
-        <div class="event-card__rule"></div>
-
-        <div class="event-detail">
-          <span class="event-detail__label">Date & Time</span>
-          <p class="event-time">Monday, Dec 28 2026 · 10:00 AM</p>
+      <section
+        id="events"
+        class="section events"
+        aria-labelledby="events-title"
+      >
+        <div class="arch-band arch-band--down" aria-hidden="true">
+          <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+            <rect width="1200" height="74" fill="url(#p-pendant-cream)" />
+          </svg>
         </div>
 
-        <div class="event-detail">
-          <span class="event-detail__label">Venue</span>
-          <p class="event-place">Saleena Palace Auditorium</p>
-          <p class="event-addr">
-            Pokkunnu, Mankave Pantheerankave Road,
-            Kozhikode, Kerala 673014
-          </p>
+        <div class="section__deco section__deco--top" aria-hidden="true">
+          <svg class="lantern" viewBox="0 0 64 150" data-parallax="0.05">
+            <use href="#s-lantern" />
+          </svg>
+          <svg
+            class="lantern lantern--r"
+            viewBox="0 0 64 150"
+            data-parallax="0.05"
+          >
+            <use href="#s-lantern" />
+          </svg>
         </div>
 
-        <a class="dir-link"
-           href="https://maps.app.goo.gl/7J4er99zmMJGyKjG8?g_st=ac"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Get directions to Saleena Palace Auditorium">
-          <span>Get Directions</span>
-          <span class="dir-link__arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </article>
+        <div class="section__inner">
+          <p class="eyebrow" data-reveal="up">Celebration</p>
 
-    <!-- Groom's Venue -->
-    <article class="event-card event-card--groom"
-             data-reveal="right" style="--d:.22s">
+          <h2
+            class="section-title"
+            id="events-title"
+            data-reveal="up"
+            style="--d: 0.1s"
+          >
+            Wedding Events
+          </h2>
 
-      <span class="event-card__corner event-card__corner--tl"
-            aria-hidden="true"></span>
-      <span class="event-card__corner event-card__corner--br"
-            aria-hidden="true"></span>
+          <div class="divider" data-reveal="divider" style="--d: 0.18s">
+            <span class="divider__line"></span>
+            <svg class="divider__mark" viewBox="0 0 24 24">
+              <use href="#s-star8" />
+            </svg>
+            <span class="divider__line"></span>
+          </div>
 
-      <header class="event-card__header">
-        <span class="event-card__label" style="font-size: 40px;" >Groom's Venue</span>
-      </header>
+          <div class="events-grid">
+            <!-- Bride's Venue -->
+            <article
+              class="event-card event-card--bride"
+              data-reveal="left"
+              style="--d: 0.1s"
+            >
+              <span
+                class="event-card__corner event-card__corner--tl"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="event-card__corner event-card__corner--br"
+                aria-hidden="true"
+              ></span>
 
-      <div class="event-card__body">
+              <header class="event-card__header">
+                <span class="event-card__label" style="font-size: 40px"
+                  >Bride's Venue</span
+                >
+              </header>
 
-        <h3>Reception</h3>
+              <div class="event-card__body">
+                <h3>Nikkah</h3>
 
-        <div class="event-card__rule"></div>
+                <div class="event-card__rule"></div>
 
-        <div class="event-detail">
-          <span class="event-detail__label">Date & Time</span>
-          <p class="event-time">Tuesday, Dec 29 2026 · 5:00 – 10:00 PM</p>
+                <div class="event-detail">
+                  <span class="event-detail__label">Date & Time</span>
+                  <p class="event-time">Monday, Dec 28 2026 · 10:00 AM</p>
+                </div>
+
+                <div class="event-detail">
+                  <span class="event-detail__label">Venue</span>
+                  <p class="event-place">Saleena Palace Auditorium</p>
+                  <p class="event-addr">
+                    Pokkunnu, Mankave Pantheerankave Road, Kozhikode, Kerala
+                    673014
+                  </p>
+                </div>
+
+                <a
+                  class="dir-link"
+                  href="https://maps.app.goo.gl/7J4er99zmMJGyKjG8?g_st=ac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get directions to Saleena Palace Auditorium"
+                >
+                  <span>Get Directions</span>
+                  <span class="dir-link__arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Groom's Venue -->
+            <article
+              class="event-card event-card--groom"
+              data-reveal="right"
+              style="--d: 0.22s"
+            >
+              <span
+                class="event-card__corner event-card__corner--tl"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="event-card__corner event-card__corner--br"
+                aria-hidden="true"
+              ></span>
+
+              <header class="event-card__header">
+                <span class="event-card__label" style="font-size: 40px"
+                  >Groom's Venue</span
+                >
+              </header>
+
+              <div class="event-card__body">
+                <h3>Reception</h3>
+
+                <div class="event-card__rule"></div>
+
+                <div class="event-detail">
+                  <span class="event-detail__label">Date & Time</span>
+                  <p class="event-time">
+                    Tuesday, Dec 29 2026 · 5:00 – 10:00 PM
+                  </p>
+                </div>
+
+                <div class="event-detail">
+                  <span class="event-detail__label">Venue</span>
+                  <p class="event-place">White Castle Auditorium</p>
+                  <p class="event-addr">
+                    Mathottam, Kannanchery, Kozhikode, Kerala 673003
+                  </p>
+                </div>
+
+                <a
+                  class="dir-link"
+                  href="https://maps.app.goo.gl/KsUDU3YjbCmj6Qq66?g_st=ac"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get directions to White Castle Auditorium"
+                >
+                  <span>Get Directions</span>
+                  <span class="dir-link__arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
+      </section>
 
-        <div class="event-detail">
-          <span class="event-detail__label">Venue</span>
-          <p class="event-place">White Castle Auditorium</p>
-          <p class="event-addr">
-            Mathottam, Kannanchery,
-            Kozhikode, Kerala 673003
-          </p>
-        </div>
-
-        <a class="dir-link"
-           href="https://maps.app.goo.gl/KsUDU3YjbCmj6Qq66?g_st=ac"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Get directions to White Castle Auditorium">
-          <span>Get Directions</span>
-          <span class="dir-link__arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </article>
-
-  </div>
-</div>
-
-
-
-
-  </section>
-
-  <!-- ============================================================
+      <!-- ============================================================
        COUNTDOWN
        ============================================================ -->
-  <section id="countdown" class="section countdown" aria-labelledby="countdown-title">
-    <div class="arch-band arch-band--down arch-band--beige" aria-hidden="true">
-      <svg viewBox="0 0 1200 74" preserveAspectRatio="none"><rect width="1200" height="74" fill="url(#p-pendant-beige)" /></svg>
-    </div>
+      <section
+        id="countdown"
+        class="section countdown"
+        aria-labelledby="countdown-title"
+      >
+        <div
+          class="arch-band arch-band--down arch-band--beige"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+            <rect width="1200" height="74" fill="url(#p-pendant-beige)" />
+          </svg>
+        </div>
 
-    <div class="countdown__frame" data-reveal="fade" aria-hidden="true">
-      <svg class="countdown__border" viewBox="0 0 1000 520" preserveAspectRatio="none">
-        <rect class="frame-line" x="10" y="10" width="980" height="500" pathLength="1" vector-effect="non-scaling-stroke" />
-      </svg>
-      <span class="countdown__corner countdown__corner--tl"></span>
-      <span class="countdown__corner countdown__corner--tr"></span>
-      <span class="countdown__corner countdown__corner--bl"></span>
-      <span class="countdown__corner countdown__corner--br"></span>
-      <svg class="lantern lantern--edge lantern--l" viewBox="0 0 64 150" data-parallax="0.04"><use href="#s-lantern" /></svg>
-      <svg class="lantern lantern--edge lantern--r" viewBox="0 0 64 150" data-parallax="0.04"><use href="#s-lantern" /></svg>
-    </div>
+        <div class="countdown__frame" data-reveal="fade" aria-hidden="true">
+          <svg
+            class="countdown__border"
+            viewBox="0 0 1000 520"
+            preserveAspectRatio="none"
+          >
+            <rect
+              class="frame-line"
+              x="10"
+              y="10"
+              width="980"
+              height="500"
+              pathLength="1"
+              vector-effect="non-scaling-stroke"
+            />
+          </svg>
+          <span class="countdown__corner countdown__corner--tl"></span>
+          <span class="countdown__corner countdown__corner--tr"></span>
+          <span class="countdown__corner countdown__corner--bl"></span>
+          <span class="countdown__corner countdown__corner--br"></span>
+          <svg
+            class="lantern lantern--edge lantern--l"
+            viewBox="0 0 64 150"
+            data-parallax="0.04"
+          >
+            <use href="#s-lantern" />
+          </svg>
+          <svg
+            class="lantern lantern--edge lantern--r"
+            viewBox="0 0 64 150"
+            data-parallax="0.04"
+          >
+            <use href="#s-lantern" />
+          </svg>
+        </div>
 
-    <div class="section__inner">
-      <p class="eyebrow" data-reveal="up">Save The Date</p>
-      <h2 class="section-title" id="countdown-title" data-reveal="up" style="--d:.1s">Counting Down To Forever</h2>
-      <div class="divider" data-reveal="divider" style="--d:.18s"><span class="divider__line"></span><svg class="divider__mark" viewBox="0 0 24 24"><use href="#s-star8" /></svg><span class="divider__line"></span></div>
+        <div class="section__inner">
+          <p class="eyebrow" data-reveal="up">Save The Date</p>
+          <h2
+            class="section-title"
+            id="countdown-title"
+            data-reveal="up"
+            style="--d: 0.1s"
+          >
+            Counting Down To Forever
+          </h2>
+          <div class="divider" data-reveal="divider" style="--d: 0.18s">
+            <span class="divider__line"></span
+            ><svg class="divider__mark" viewBox="0 0 24 24">
+              <use href="#s-star8" /></svg
+            ><span class="divider__line"></span>
+          </div>
 
-      <div class="timer" id="timer" role="timer" data-reveal="up" style="--d:.26s">
-        <div class="unit"><div class="num" id="cd-days">00</div><div class="lab">Days</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="num" id="cd-hours">00</div><div class="lab">Hrs</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="num" id="cd-mins">00</div><div class="lab">Min</div></div>
-        <div class="sep" aria-hidden="true"></div>
-        <div class="unit"><div class="num" id="cd-secs">00</div><div class="lab">Sec</div></div>
-      </div>
-      <p class="sr-only" id="cd-status" role="status" aria-live="polite"></p>
-    </div>
+          <div
+            class="timer"
+            id="timer"
+            role="timer"
+            data-reveal="up"
+            style="--d: 0.26s"
+          >
+            <div class="unit">
+              <div class="num" id="cd-days">00</div>
+              <div class="lab">Days</div>
+            </div>
+            <div class="sep" aria-hidden="true"></div>
+            <div class="unit">
+              <div class="num" id="cd-hours">00</div>
+              <div class="lab">Hrs</div>
+            </div>
+            <div class="sep" aria-hidden="true"></div>
+            <div class="unit">
+              <div class="num" id="cd-mins">00</div>
+              <div class="lab">Min</div>
+            </div>
+            <div class="sep" aria-hidden="true"></div>
+            <div class="unit">
+              <div class="num" id="cd-secs">00</div>
+              <div class="lab">Sec</div>
+            </div>
+          </div>
+          <p
+            class="sr-only"
+            id="cd-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+        </div>
 
-    <div class="sparkles sparkles--edge" data-sparks="7" aria-hidden="true"></div>
-    <div class="petal-layer" data-petals="7" data-petal-tone="warm" aria-hidden="true"></div>
-  </section>
+        <div
+          class="sparkles sparkles--edge"
+          data-sparks="7"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="petal-layer"
+          data-petals="7"
+          data-petal-tone="warm"
+          aria-hidden="true"
+        ></div>
+      </section>
 
-  <!-- ============================================================
+      <!-- ============================================================
        LOCATION — venue & directions
        ============================================================ -->
-  <section id="location" class="section location" aria-labelledby="location-title">
-    <div class="arch-band arch-band--down arch-band--maroon" aria-hidden="true">
-      <svg viewBox="0 0 1200 74" preserveAspectRatio="none"><rect width="1200" height="74" fill="url(#p-pendant-maroon)" /></svg>
-    </div>
+      <section
+        id="location"
+        class="section location"
+        aria-labelledby="location-title"
+      >
+        <div
+          class="arch-band arch-band--down arch-band--maroon"
+          aria-hidden="true"
+        >
+          <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+            <rect width="1200" height="74" fill="url(#p-pendant-maroon)" />
+          </svg>
+        </div>
 
-    <div class="section__deco section__deco--left" aria-hidden="true">
-      <svg class="botanical botanical--sm" viewBox="0 0 160 160" data-parallax="0.05"><use href="#s-spray" /></svg>
-    </div>
-    <div class="section__deco section__deco--right" aria-hidden="true">
-      <svg class="botanical botanical--sm" viewBox="0 0 160 160" data-parallax="0.05"><use href="#s-spray" /></svg>
-    </div>
+        <div class="section__deco section__deco--left" aria-hidden="true">
+          <svg
+            class="botanical botanical--sm"
+            viewBox="0 0 160 160"
+            data-parallax="0.05"
+          >
+            <use href="#s-spray" />
+          </svg>
+        </div>
+        <div class="section__deco section__deco--right" aria-hidden="true">
+          <svg
+            class="botanical botanical--sm"
+            viewBox="0 0 160 160"
+            data-parallax="0.05"
+          >
+            <use href="#s-spray" />
+          </svg>
+        </div>
 
-    <div class="section__inner section__inner--wide">
-      <p class="eyebrow" data-reveal="up">Find Us</p>
-      <h2 class="section-title" id="location-title" data-reveal="up" style="--d:.1s">Venue &amp; Directions</h2>
-      <div class="divider" data-reveal="divider" style="--d:.18s"><span class="divider__line"></span><svg class="divider__mark" viewBox="0 0 24 24"><use href="#s-star8" /></svg><span class="divider__line"></span></div>
-
-      <div class="map-grid">
-        <article class="map-card" data-reveal="left" style="--d:.12s">
-          <div class="map-card__frame">
-            <iframe loading="lazy" title="Map to Saleena Palace Auditorium"
-              src="https://maps.google.com/maps?q=Saleena+Palace+Auditorium+Pokkunnu+Kozhikode+Kerala+673014&output=embed"></iframe>
+        <div class="section__inner section__inner--wide">
+          <p class="eyebrow" data-reveal="up">Find Us</p>
+          <h2
+            class="section-title"
+            id="location-title"
+            data-reveal="up"
+            style="--d: 0.1s"
+          >
+            Venue &amp; Directions
+          </h2>
+          <div class="divider" data-reveal="divider" style="--d: 0.18s">
+            <span class="divider__line"></span
+            ><svg class="divider__mark" viewBox="0 0 24 24">
+              <use href="#s-star8" /></svg
+            ><span class="divider__line"></span>
           </div>
-          <div class="map-info">
-            <div class="eyebrow">Nikkah · Dec 28</div>
-            <h3>Saleena Palace Auditorium</h3>
-            <p>Pokkunnu, Mankave Pantheerankave Road, Kozhikode, Kerala 673014</p>
-            <a class="dir-btn" href="https://maps.app.goo.gl/7J4er99zmMJGyKjG8?g_st=ac" target="_blank" rel="noopener">Directions <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
 
-        <article class="map-card" data-reveal="right" style="--d:.24s">
-          <div class="map-card__frame">
-            <iframe loading="lazy" title="Map to White Castle Auditorium"
-              src="https://maps.google.com/maps?q=White+Castle+Auditorium+Mathottam+Kozhikode+Kerala+673003&output=embed"></iframe>
-          </div>
-          <div class="map-info">
-            <div class="eyebrow">Reception · Dec 29</div>
-            <h3>White Castle Auditorium</h3>
-            <p>Mathottam, Kannanchery, Kozhikode, Kerala 673003</p>
-            <a class="dir-btn" href="https://maps.app.goo.gl/KsUDU3YjbCmj6Qq66?g_st=ac" target="_blank" rel="noopener">Directions <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-</main>
+          <div class="map-grid">
+            <article class="map-card" data-reveal="left" style="--d: 0.12s">
+              <div class="map-card__frame">
+                <iframe
+                  loading="lazy"
+                  title="Map to Saleena Palace Auditorium"
+                  src="https://maps.google.com/maps?q=Saleena+Palace+Auditorium+Pokkunnu+Kozhikode+Kerala+673014&output=embed"
+                ></iframe>
+              </div>
+              <div class="map-info">
+                <div class="eyebrow">Nikkah · Dec 28</div>
+                <h3>Saleena Palace Auditorium</h3>
+                <p>
+                  Pokkunnu, Mankave Pantheerankave Road, Kozhikode, Kerala
+                  673014
+                </p>
+                <a
+                  class="dir-btn"
+                  href="https://maps.app.goo.gl/7J4er99zmMJGyKjG8?g_st=ac"
+                  target="_blank"
+                  rel="noopener"
+                  >Directions <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
 
-<!-- ============================================================
+            <article class="map-card" data-reveal="right" style="--d: 0.24s">
+              <div class="map-card__frame">
+                <iframe
+                  loading="lazy"
+                  title="Map to White Castle Auditorium"
+                  src="https://maps.google.com/maps?q=White+Castle+Auditorium+Mathottam+Kozhikode+Kerala+673003&output=embed"
+                ></iframe>
+              </div>
+              <div class="map-info">
+                <div class="eyebrow">Reception · Dec 29</div>
+                <h3>White Castle Auditorium</h3>
+                <p>Mathottam, Kannanchery, Kozhikode, Kerala 673003</p>
+                <a
+                  class="dir-btn"
+                  href="https://maps.app.goo.gl/KsUDU3YjbCmj6Qq66?g_st=ac"
+                  target="_blank"
+                  rel="noopener"
+                  >Directions <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
      FOOTER — elegant finale
      ============================================================ -->
-<footer class="footer">
-  <div class="arch-band arch-band--down arch-band--deep" aria-hidden="true">
-    <svg viewBox="0 0 1200 74" preserveAspectRatio="none"><rect width="1200" height="74" fill="url(#p-pendant-deep)" /></svg>
-  </div>
 
-  <svg class="footer__skyline" viewBox="0 0 1200 160" preserveAspectRatio="xMidYMax slice" aria-hidden="true" data-parallax="0.04">
-    <g fill="currentColor">
-      <path d="M0 160 V96 H60 V70 Q60 44 90 44 Q120 44 120 70 V96 H180 V160 Z" opacity=".5" />
-      <path d="M180 160 V110 Q210 60 250 60 Q290 60 320 110 V160 Z" opacity=".4" />
-      <path d="M320 160 V84 H360 V56 Q360 28 400 28 Q440 28 440 56 V84 H480 V160 Z" opacity=".55" />
-      <path d="M480 160 V104 Q520 52 570 52 Q620 52 660 104 V160 Z" opacity=".42" />
-      <path d="M660 160 V78 H700 V48 Q700 20 740 20 Q780 20 780 48 V78 H820 V160 Z" opacity=".58" />
-      <path d="M820 160 V112 Q850 64 890 64 Q930 64 960 112 V160 Z" opacity=".4" />
-      <path d="M960 160 V92 H1000 V64 Q1000 36 1040 36 Q1080 36 1080 64 V92 H1120 V160 Z" opacity=".52" />
-      <path d="M1120 160 V116 Q1150 74 1200 74 V160 Z" opacity=".38" />
-      <rect x="0" y="152" width="1200" height="8" opacity=".5" />
-    </g>
-  </svg>
+    <footer class="footer">
+      <div class="arch-band arch-band--down arch-band--deep" aria-hidden="true">
+        <svg viewBox="0 0 1200 74" preserveAspectRatio="none">
+          <rect width="1200" height="74" fill="url(#p-pendant-deep)" />
+        </svg>
+      </div>
 
-  <div class="footer__inner">
-    <div class="divider divider--gold" data-reveal="divider"><span class="divider__line"></span><svg class="divider__mark" viewBox="0 0 24 24"><use href="#s-star8" /></svg><span class="divider__line"></span></div>
+      <svg
+        class="footer__skyline"
+        viewBox="0 0 1200 160"
+        preserveAspectRatio="xMidYMax slice"
+        aria-hidden="true"
+        data-parallax="0.04"
+      >
+        <g fill="currentColor">
+          <path
+            d="M0 160 V96 H60 V70 Q60 44 90 44 Q120 44 120 70 V96 H180 V160 Z"
+            opacity=".5"
+          />
+          <path
+            d="M180 160 V110 Q210 60 250 60 Q290 60 320 110 V160 Z"
+            opacity=".4"
+          />
+          <path
+            d="M320 160 V84 H360 V56 Q360 28 400 28 Q440 28 440 56 V84 H480 V160 Z"
+            opacity=".55"
+          />
+          <path
+            d="M480 160 V104 Q520 52 570 52 Q620 52 660 104 V160 Z"
+            opacity=".42"
+          />
+          <path
+            d="M660 160 V78 H700 V48 Q700 20 740 20 Q780 20 780 48 V78 H820 V160 Z"
+            opacity=".58"
+          />
+          <path
+            d="M820 160 V112 Q850 64 890 64 Q930 64 960 112 V160 Z"
+            opacity=".4"
+          />
+          <path
+            d="M960 160 V92 H1000 V64 Q1000 36 1040 36 Q1080 36 1080 64 V92 H1120 V160 Z"
+            opacity=".52"
+          />
+          <path d="M1120 160 V116 Q1150 74 1200 74 V160 Z" opacity=".38" />
+          <rect x="0" y="152" width="1200" height="8" opacity=".5" />
+        </g>
+      </svg>
 
-    <div class="footer__monogram-wrap" data-reveal="scale" style="--d:.12s">
-      <span class="footer__sparkle" aria-hidden="true"></span>
-      <div class="monogram">Alshib &amp; Nifana</div>
-    </div>
+      <div class="footer__inner">
+        <div class="divider divider--gold" data-reveal="divider">
+          <span class="divider__line"></span>
+          <svg class="divider__mark" viewBox="0 0 24 24">
+            <use href="#s-star8" />
+          </svg>
+          <span class="divider__line"></span>
+        </div>
 
-    <div class="tag" data-reveal="up" style="--d:.24s">28 &amp; 29 December 2026</div>
-    <div class="credit" data-reveal="up" style="--d:.34s">With love, from our families</div>
+        <div
+          class="footer__monogram-wrap"
+          data-reveal="scale"
+          style="--d: 0.12s"
+        >
+          <span class="footer__sparkle" aria-hidden="true"></span>
+          <div class="monogram">Alshib &amp; Nifana</div>
+        </div>
 
-    <div class="footer__ornament" aria-hidden="true" data-reveal="up" style="--d:.42s">
-      <svg class="spray spray--foot-l" viewBox="0 0 160 160"><use href="#s-spray" /></svg>
-      <svg class="spray spray--foot-r" viewBox="0 0 160 160"><use href="#s-spray" /></svg>
-    </div>
-  </div>
+        <div class="tag" data-reveal="up" style="--d: 0.24s">
+          28 &amp; 29 December 2026
+        </div>
 
-  <div class="petal-layer petal-layer--soft" data-petals="6" data-petal-tone="warm" aria-hidden="true"></div>
-</footer>
+        <div class="credit" data-reveal="up" style="--d: 0.34s">
+          With love, from our families
+        </div>
 
-<!-- ============================================================
+        <div
+          class="footer__ornament"
+          aria-hidden="true"
+          data-reveal="up"
+          style="--d: 0.42s"
+        >
+          <svg class="spray spray--foot-l" viewBox="0 0 160 160">
+            <use href="#s-spray" />
+          </svg>
+          <svg class="spray spray--foot-r" viewBox="0 0 160 160">
+            <use href="#s-spray" />
+          </svg>
+        </div>
+
+        <div class="footer__brand-credit">
+          <span>Crafted with care by</span>
+          <a
+            href="https://adveritodigital.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit Adverito Digital Solutions website"
+            >Adverito </a
+          >
+        </div>
+      </div>
+
+      <div
+        class="petal-layer petal-layer--soft"
+        data-petals="6"
+        data-petal-tone="warm"
+        aria-hidden="true"
+      ></div>
+    </footer>
+
+    <!-- ============================================================
      SVG symbol library
      ============================================================ -->
-<svg class="svg-sprite" aria-hidden="true" focusable="false" width="0" height="0">
-  <defs>
-    <linearGradient id="g-petal-rose" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f0b7ac" />
-      <stop offset="55%" stop-color="#d1766f" />
-      <stop offset="100%" stop-color="#9c3f4a" />
-    </linearGradient>
-    <linearGradient id="g-petal-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f6e6bd" />
-      <stop offset="55%" stop-color="#dcbb77" />
-      <stop offset="100%" stop-color="#b98f45" />
-    </linearGradient>
+    <svg
+      class="svg-sprite"
+      aria-hidden="true"
+      focusable="false"
+      width="0"
+      height="0"
+    >
+      <defs>
+        <linearGradient id="g-petal-rose" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f0b7ac" />
+          <stop offset="55%" stop-color="#d1766f" />
+          <stop offset="100%" stop-color="#9c3f4a" />
+        </linearGradient>
+        <linearGradient id="g-petal-gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f6e6bd" />
+          <stop offset="55%" stop-color="#dcbb77" />
+          <stop offset="100%" stop-color="#b98f45" />
+        </linearGradient>
 
-    <pattern id="p-pendant-beige" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#efe3c8" />
-      <path d="M50 62 V70" stroke="#c8a35a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
-    </pattern>
-    <pattern id="p-pendant-cream" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#faf4e6" />
-      <path d="M50 62 V70" stroke="#c8a35a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
-    </pattern>
-    <pattern id="p-pendant-soft" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#8a1f38" />
-      <path d="M50 62 V70" stroke="#e3cd9a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
-    </pattern>
-    <pattern id="p-pendant-maroon" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#6d1029" />
-      <path d="M50 62 V70" stroke="#e3cd9a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
-    </pattern>
-    <pattern id="p-pendant-wine" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#faf4e6" />
-      <path d="M50 62 V70" stroke="#c8a35a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
-    </pattern>
-    <pattern id="p-pendant-deep" width="100" height="74" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#8a1f38" />
-      <path d="M50 62 V70" stroke="#e3cd9a" stroke-width="1.4" fill="none" />
-      <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
-    </pattern>
-    <pattern id="p-pendant-gold" width="100" height="60" patternUnits="userSpaceOnUse">
-      <path d="M0 0 H100 V6 Q100 44 50 48 Q0 44 0 6 Z" fill="#efe3c8" opacity=".7" />
-    </pattern>
+        <pattern
+          id="p-pendant-beige"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#efe3c8" />
+          <path
+            d="M50 62 V70"
+            stroke="#c8a35a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
+        </pattern>
+        <pattern
+          id="p-pendant-cream"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#faf4e6" />
+          <path
+            d="M50 62 V70"
+            stroke="#c8a35a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
+        </pattern>
+        <pattern
+          id="p-pendant-soft"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#8a1f38" />
+          <path
+            d="M50 62 V70"
+            stroke="#e3cd9a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
+        </pattern>
+        <pattern
+          id="p-pendant-maroon"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#6d1029" />
+          <path
+            d="M50 62 V70"
+            stroke="#e3cd9a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
+        </pattern>
+        <pattern
+          id="p-pendant-wine"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#faf4e6" />
+          <path
+            d="M50 62 V70"
+            stroke="#c8a35a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#c8a35a" />
+        </pattern>
+        <pattern
+          id="p-pendant-deep"
+          width="100"
+          height="74"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M0 0 H100 V10 Q100 58 50 62 Q0 58 0 10 Z" fill="#8a1f38" />
+          <path
+            d="M50 62 V70"
+            stroke="#e3cd9a"
+            stroke-width="1.4"
+            fill="none"
+          />
+          <circle cx="50" cy="72" r="2.4" fill="#e3cd9a" />
+        </pattern>
+        <pattern
+          id="p-pendant-gold"
+          width="100"
+          height="60"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M0 0 H100 V6 Q100 44 50 48 Q0 44 0 6 Z"
+            fill="#efe3c8"
+            opacity=".7"
+          />
+        </pattern>
 
-    <!-- rose petal -->
-    <symbol id="s-petal" viewBox="0 0 26 34">
-      <path d="M13 1.5 C20 8 23.5 17 20.4 25.6 C18.4 31.2 15.2 33.4 13 33.4 C10.8 33.4 7.6 31.2 5.6 25.6 C2.5 17 6 8 13 1.5 Z" fill="url(#g-petal-rose)" />
-      <path d="M13 5 C13 14 13 24 13 31" stroke="rgba(255,240,232,.45)" stroke-width=".9" fill="none" />
-    </symbol>
-    <!-- gold petal -->
-    <symbol id="s-petal-gold" viewBox="0 0 26 34">
-      <path d="M13 1.5 C20 8 23.5 17 20.4 25.6 C18.4 31.2 15.2 33.4 13 33.4 C10.8 33.4 7.6 31.2 5.6 25.6 C2.5 17 6 8 13 1.5 Z" fill="url(#g-petal-gold)" />
-      <path d="M13 5 C13 14 13 24 13 31" stroke="rgba(255,255,255,.5)" stroke-width=".9" fill="none" />
-    </symbol>
+        <!-- rose petal -->
+        <symbol id="s-petal" viewBox="0 0 26 34">
+          <path
+            d="M13 1.5 C20 8 23.5 17 20.4 25.6 C18.4 31.2 15.2 33.4 13 33.4 C10.8 33.4 7.6 31.2 5.6 25.6 C2.5 17 6 8 13 1.5 Z"
+            fill="url(#g-petal-rose)"
+          />
+          <path
+            d="M13 5 C13 14 13 24 13 31"
+            stroke="rgba(255,240,232,.45)"
+            stroke-width=".9"
+            fill="none"
+          />
+        </symbol>
+        <!-- gold petal -->
+        <symbol id="s-petal-gold" viewBox="0 0 26 34">
+          <path
+            d="M13 1.5 C20 8 23.5 17 20.4 25.6 C18.4 31.2 15.2 33.4 13 33.4 C10.8 33.4 7.6 31.2 5.6 25.6 C2.5 17 6 8 13 1.5 Z"
+            fill="url(#g-petal-gold)"
+          />
+          <path
+            d="M13 5 C13 14 13 24 13 31"
+            stroke="rgba(255,255,255,.5)"
+            stroke-width=".9"
+            fill="none"
+          />
+        </symbol>
 
-    <!-- jasmine blossom -->
-    <symbol id="s-jasmine" viewBox="0 0 40 40">
-      <g fill="#fdf8ec">
-        <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" />
-        <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" transform="rotate(72 20 20)" />
-        <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" transform="rotate(144 20 20)" />
-        <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" transform="rotate(216 20 20)" />
-        <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" transform="rotate(288 20 20)" />
-      </g>
-      <circle cx="20" cy="20" r="3" fill="#e6c882" />
-    </symbol>
+        <!-- jasmine blossom -->
+        <symbol id="s-jasmine" viewBox="0 0 40 40">
+          <g fill="#fdf8ec">
+            <path d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z" />
+            <path
+              d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z"
+              transform="rotate(72 20 20)"
+            />
+            <path
+              d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z"
+              transform="rotate(144 20 20)"
+            />
+            <path
+              d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z"
+              transform="rotate(216 20 20)"
+            />
+            <path
+              d="M20 20 C15 14 15 7 20 3 C25 7 25 14 20 20 Z"
+              transform="rotate(288 20 20)"
+            />
+          </g>
+          <circle cx="20" cy="20" r="3" fill="#e6c882" />
+        </symbol>
 
-    <!-- corner flourish (drawn) -->
-    <symbol id="s-corner" viewBox="0 0 120 120">
-      <g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
-        <path pathLength="1" d="M6 118 V46 C6 24.5 24.5 6 46 6 H118" />
-        <path pathLength="1" d="M22 118 V56 C22 36 36 22 56 22 H118" />
-        <path pathLength="1" d="M46 6 C 66 8 76 20 74 38" />
-        <path pathLength="1" d="M6 46 C 8 66 20 76 38 74" />
-        <path pathLength="1" d="M62 6 C 72 12 74 22 68 30 C 62 22 62 12 62 6 Z" />
-        <path pathLength="1" d="M6 62 C 12 72 22 74 30 68 C 22 62 12 62 6 62 Z" />
-      </g>
-      <circle cx="46" cy="46" r="3.4" fill="currentColor" />
-      <circle cx="96" cy="14" r="2.2" fill="currentColor" />
-      <circle cx="14" cy="96" r="2.2" fill="currentColor" />
-      <circle cx="74" cy="38" r="2" fill="currentColor" />
-      <circle cx="38" cy="74" r="2" fill="currentColor" />
-    </symbol>
+        <!-- corner flourish (drawn) -->
+        <symbol id="s-corner" viewBox="0 0 120 120">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.3"
+            stroke-linecap="round"
+          >
+            <path pathLength="1" d="M6 118 V46 C6 24.5 24.5 6 46 6 H118" />
+            <path pathLength="1" d="M22 118 V56 C22 36 36 22 56 22 H118" />
+            <path pathLength="1" d="M46 6 C 66 8 76 20 74 38" />
+            <path pathLength="1" d="M6 46 C 8 66 20 76 38 74" />
+            <path
+              pathLength="1"
+              d="M62 6 C 72 12 74 22 68 30 C 62 22 62 12 62 6 Z"
+            />
+            <path
+              pathLength="1"
+              d="M6 62 C 12 72 22 74 30 68 C 22 62 12 62 6 62 Z"
+            />
+          </g>
+          <circle cx="46" cy="46" r="3.4" fill="currentColor" />
+          <circle cx="96" cy="14" r="2.2" fill="currentColor" />
+          <circle cx="14" cy="96" r="2.2" fill="currentColor" />
+          <circle cx="74" cy="38" r="2" fill="currentColor" />
+          <circle cx="38" cy="74" r="2" fill="currentColor" />
+        </symbol>
 
-    <!-- botanical branch: root bottom-left, tip top-right -->
-    <symbol id="s-branch" viewBox="0 0 180 200">
-      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".95">
-        <path pathLength="1" d="M6 194 C 44 178 76 154 100 122 C 118 98 132 68 142 34" />
-        <path pathLength="1" d="M52 168 C 44 156 34 150 22 150" />
-        <path pathLength="1" d="M84 136 C 92 124 104 118 116 118" />
-        <path pathLength="1" d="M114 92 C 106 80 96 74 84 74" />
-        <path pathLength="1" d="M132 56 C 140 46 152 42 164 44" />
-      </g>
-      <g fill="currentColor" opacity=".8">
-        <path d="M22 150 c -10 -10 -8 -26 6 -32 c 8 14 4 26 -6 32 z" />
-        <path d="M116 118 c 12 -8 14 -24 2 -32 c -10 12 -8 24 -2 32 z" />
-        <path d="M84 74 c -12 -8 -14 -24 -2 -32 c 10 12 8 24 2 32 z" />
-        <path d="M164 44 c 12 -6 16 -22 6 -31 c -11 11 -10 23 -6 31 z" />
-        <path d="M46 178 c -14 -4 -22 -18 -16 -30 c 12 8 18 20 16 30 z" />
-        <path d="M104 122 c 14 -6 20 -20 14 -32 c -12 8 -18 22 -14 32 z" />
-      </g>
-      <use href="#s-jasmine" x="10" y="128" width="40" height="40" />
-      <use href="#s-jasmine" x="70" y="44" width="34" height="34" />
-      <use href="#s-jasmine" x="118" y="4" width="38" height="38" />
-      <use href="#s-jasmine" x="52" y="96" width="26" height="26" />
-    </symbol>
+        <!-- botanical branch: root bottom-left, tip top-right -->
+        <symbol id="s-branch" viewBox="0 0 180 200">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            opacity=".95"
+          >
+            <path
+              pathLength="1"
+              d="M6 194 C 44 178 76 154 100 122 C 118 98 132 68 142 34"
+            />
+            <path pathLength="1" d="M52 168 C 44 156 34 150 22 150" />
+            <path pathLength="1" d="M84 136 C 92 124 104 118 116 118" />
+            <path pathLength="1" d="M114 92 C 106 80 96 74 84 74" />
+            <path pathLength="1" d="M132 56 C 140 46 152 42 164 44" />
+          </g>
+          <g fill="currentColor" opacity=".8">
+            <path d="M22 150 c -10 -10 -8 -26 6 -32 c 8 14 4 26 -6 32 z" />
+            <path d="M116 118 c 12 -8 14 -24 2 -32 c -10 12 -8 24 -2 32 z" />
+            <path d="M84 74 c -12 -8 -14 -24 -2 -32 c 10 12 8 24 2 32 z" />
+            <path d="M164 44 c 12 -6 16 -22 6 -31 c -11 11 -10 23 -6 31 z" />
+            <path d="M46 178 c -14 -4 -22 -18 -16 -30 c 12 8 18 20 16 30 z" />
+            <path d="M104 122 c 14 -6 20 -20 14 -32 c -12 8 -18 22 -14 32 z" />
+          </g>
+          <use href="#s-jasmine" x="10" y="128" width="40" height="40" />
+          <use href="#s-jasmine" x="70" y="44" width="34" height="34" />
+          <use href="#s-jasmine" x="118" y="4" width="38" height="38" />
+          <use href="#s-jasmine" x="52" y="96" width="26" height="26" />
+        </symbol>
 
-    <!-- jasmine spray: root top-left, spreads down-right -->
-    <symbol id="s-spray" viewBox="0 0 160 160">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-        <path pathLength="1" d="M8 8 C 48 22 82 48 106 84 C 120 106 130 128 136 152" />
-        <path pathLength="1" d="M44 26 C 48 40 44 54 32 62" />
-        <path pathLength="1" d="M78 54 C 88 64 90 78 84 92" />
-        <path pathLength="1" d="M110 96 C 100 104 96 116 100 128" />
-      </g>
-      <g fill="currentColor" opacity=".75">
-        <path d="M32 62 c -14 -2 -24 -14 -22 -27 c 13 3 22 14 22 27 z" />
-        <path d="M84 92 c 14 -4 22 -17 18 -30 c -13 5 -20 18 -18 30 z" />
-        <path d="M100 128 c -14 0 -25 -11 -25 -24 c 14 0 24 11 25 24 z" />
-        <path d="M60 40 c 6 -12 20 -17 32 -12 c -7 12 -20 17 -32 12 z" />
-      </g>
-      <use href="#s-jasmine" x="18" y="34" width="42" height="42" />
-      <use href="#s-jasmine" x="66" y="76" width="34" height="34" />
-      <use href="#s-jasmine" x="112" y="112" width="40" height="40" />
-      <use href="#s-jasmine" x="88" y="14" width="26" height="26" />
-    </symbol>
+        <!-- jasmine spray: root top-left, spreads down-right -->
+        <symbol id="s-spray" viewBox="0 0 160 160">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+          >
+            <path
+              pathLength="1"
+              d="M8 8 C 48 22 82 48 106 84 C 120 106 130 128 136 152"
+            />
+            <path pathLength="1" d="M44 26 C 48 40 44 54 32 62" />
+            <path pathLength="1" d="M78 54 C 88 64 90 78 84 92" />
+            <path pathLength="1" d="M110 96 C 100 104 96 116 100 128" />
+          </g>
+          <g fill="currentColor" opacity=".75">
+            <path d="M32 62 c -14 -2 -24 -14 -22 -27 c 13 3 22 14 22 27 z" />
+            <path d="M84 92 c 14 -4 22 -17 18 -30 c -13 5 -20 18 -18 30 z" />
+            <path d="M100 128 c -14 0 -25 -11 -25 -24 c 14 0 24 11 25 24 z" />
+            <path d="M60 40 c 6 -12 20 -17 32 -12 c -7 12 -20 17 -32 12 z" />
+          </g>
+          <use href="#s-jasmine" x="18" y="34" width="42" height="42" />
+          <use href="#s-jasmine" x="66" y="76" width="34" height="34" />
+          <use href="#s-jasmine" x="112" y="112" width="40" height="40" />
+          <use href="#s-jasmine" x="88" y="14" width="26" height="26" />
+        </symbol>
 
-    <!-- hanging lantern -->
-    <symbol id="s-lantern" viewBox="0 0 64 150">
-      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
-        <path pathLength="1" d="M32 0 V22" />
-        <circle cx="32" cy="27" r="5" />
-        <path pathLength="1" d="M24 36 h16 l7 9 v10 h-30 v-10 z" />
-        <path pathLength="1" d="M15 55 h34 l-4 44 h-26 z" />
-        <path pathLength="1" d="M11 99 h42 l-6 12 h-30 z" />
-        <path pathLength="1" d="M25 64 h14 v26 h-14 z" />
-        <path pathLength="1" d="M32 111 v8" />
-        <circle cx="32" cy="124" r="4" />
-        <path pathLength="1" d="M32 128 v10" />
-      </g>
-      <path d="M27 66 h10 v22 h-10 z" fill="currentColor" opacity=".25" />
-      <circle cx="32" cy="77" r="2.6" fill="currentColor" opacity=".7" />
-    </symbol>
+        <!-- hanging lantern -->
+        <symbol id="s-lantern" viewBox="0 0 64 150">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path pathLength="1" d="M32 0 V22" />
+            <circle cx="32" cy="27" r="5" />
+            <path pathLength="1" d="M24 36 h16 l7 9 v10 h-30 v-10 z" />
+            <path pathLength="1" d="M15 55 h34 l-4 44 h-26 z" />
+            <path pathLength="1" d="M11 99 h42 l-6 12 h-30 z" />
+            <path pathLength="1" d="M25 64 h14 v26 h-14 z" />
+            <path pathLength="1" d="M32 111 v8" />
+            <circle cx="32" cy="124" r="4" />
+            <path pathLength="1" d="M32 128 v10" />
+          </g>
+          <path d="M27 66 h10 v22 h-10 z" fill="currentColor" opacity=".25" />
+          <circle cx="32" cy="77" r="2.6" fill="currentColor" opacity=".7" />
+        </symbol>
 
-    <!-- eight point star -->
-    <symbol id="s-star8" viewBox="0 0 24 24">
-      <path d="M12 1.4 L14.4 9.6 L22.6 12 L14.4 14.4 L12 22.6 L9.6 14.4 L1.4 12 L9.6 9.6 Z" fill="currentColor" />
-      <circle cx="12" cy="12" r="1.6" fill="none" stroke="currentColor" stroke-width="1" />
-    </symbol>
-  </defs>
-</svg>
-
-</body>
+        <!-- eight point star -->
+        <symbol id="s-star8" viewBox="0 0 24 24">
+          <path
+            d="M12 1.4 L14.4 9.6 L22.6 12 L14.4 14.4 L12 22.6 L9.6 14.4 L1.4 12 L9.6 9.6 Z"
+            fill="currentColor"
+          />
+          <circle
+            cx="12"
+            cy="12"
+            r="1.6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1"
+          />
+        </symbol>
+      </defs>
+    </svg>
+  </body>
 </html>
